@@ -1,0 +1,28 @@
+{% extends 'fort/base.html' %}
+{% block description %}FORTNITESTATS.RU - новости из мира фортанйт. Узнать самые и свежие новости по игру, вы можете у нас на сайте. {% endblock %}
+{% block title %}Новости из мира Fortnite - FORTNITESTATS.RU{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1 style="border-bottom: 2px solid #ff4b37;margin: 0 0 30px 0;max-width: 500px;" class="p-2 text-white">Новости</h1>
+  <div class="album py-5" style="background-color: #ffffff05;">
+    <div class="container">
+      <div class="row">
+  {% for info in all_info %}
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm" style="border:0;">
+            <img style="height: 220px;" src=" {{ info.image }} ">
+            <div class="card-body">
+                <p class="card-text"> <b>{{ info.title }}</b></p>
+              <p class="card-text"> {{ info.body }} </p>
+            </div>
+          </div>
+        </div>
+   
+  {% endfor %}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

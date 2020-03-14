@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  </head>
+
+  <body >
+    <div style="background-color: #1A1A26!important; box-shadow: 0 0 10px 0 #0c0c17;"
+      class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3"
+    >
+      <h5 class="my-0 mr-md-auto text-white font-weight-normal">FORTNITE STATS<sup style="font-size: 10px;top: -.7em;"> BETA</sup></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="menu-a" style="text-decoration: none;" href="/" >Главная</a>
+        <a class="menu-a" style="text-decoration: none;"  href="/upcoming">Ожидаемые</a>
+        <a class="menu-a" style="text-decoration: none;"  href="/news">Новости</a>
+        <a class="menu-a" style="text-decoration: none;"  href="/stats">Статистика</a>
+      </nav>
+     
+    </div>
+    {% block content %}{% endblock %}
+
+  </body>
+</html>

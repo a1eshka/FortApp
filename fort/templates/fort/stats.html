@@ -1,0 +1,16 @@
+{% extends 'fort/base.html' %} 
+{% block description %}FORTNITESTATS.RU - узнать статистику и кд в игре фортнайт. Fortnite. {% endblock %}
+{% block title %}Узнать статистику и кд - FORTNITESTATS.RU{% endblock %}
+
+{% block content %}
+
+<form action="global_stats" method="GET">
+    {% csrf_token %}
+
+    <center><input type="text" style="width: 800px;margin: 10px;height: 50px;" class="form-control" name="account" placeholder="Введите ваш ID" autofocus required>
+        <small style="color: chocolate;">*Узнать ваш ID по Никнейму <a href="find_id">нажать сюда</a></small><br><br>
+    <input type="submit" style="box-shadow: 0 0 10px rgb(40, 167, 69);height: 40px;" class="btn btn-success" value="Узнать статистику"></center>
+
+    </form>
+
+{% endblock %}

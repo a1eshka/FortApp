@@ -1,0 +1,26 @@
+{% extends 'fort/base.html' %}
+{% block description %}FORTNITESTATS.RU - подробная карточка {{ info.name }} {% endblock %}
+
+{% block title %}Подробная информация карточки {{ info.name }} - FORTNITESTATS.RU{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #ffffff0a; color: white;">
+    <div class="media" style="padding: 10px;">
+      <img style="width: 300px;" src="{{ info.images }}" class="mr-3" alt="avatar">
+      <div class="media-body">
+        <h6 style="float:right;"><span style="background-color: #6c757d42;color: #ffffff59;" class="badge badge-secondary">id: {{ info.id }}</span></h6>
+        <h1><span class="badge badge-primary">{{ info.name }}</span></h1>
+        <div class="alert alert-warning" style="float:right;"><span >Коллекция: {{ info.set }}</span></div>
+        <div class="alert alert-primary" role="alert" style="max-width: 350px;"><span>{{ info.description }}</span></div>
+        <span>Цена: <b>{{ info.price }} V</b></span><br>
+        <span>Ценность: <b>{{ info.rarity }}</b></span><br>
+        <span>Интерес: <b>{{ info.interest }}</b></span><br>
+        <span>Дата выхода: <b>{{ info.releaseDate }}</b></span><br>
+      </div>
+    </div>
+    
+    </div><br>
+    <div class="container">
+    <input type="button" class="btn btn-danger" style="box-shadow: 0 0 10px rgb(220, 53, 69);" onclick="history.back();" value="Назад"/>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'fort/base.html' %} 
+{% block title %}Турниры в Фортнайт - FORTNITESTATS.RU{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="border-bottom: 2px solid #ff4b37;margin: 0 0 30px 0;max-width: 500px;" class="p-2 text-white">Турниры в Фортнайт</h1>
+      <div class="album py-5" style="background-color: #ffffff05;">
+        <div class="container">
+          <div class="row">
+      {% for info in all_info %}
+    
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm" style="border:0;">
+                <img style="height: 300px;" src=" {{ info.poster }} ">
+                <div class="card-body">
+                    <p class="card-text"> <b>{{ info.long_description }}</b></p>
+                  <p class="card-text"> {{ info.platforms }} </p>
+                  <span style="background-color: #7d7d7dab;color: #000000;" class="badge badge-secondary"><p class="card-text"> {{ info.schedule }} </p></span>
+                </div>
+              </div>
+            </div>
+       
+      {% endfor %}
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

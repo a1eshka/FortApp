@@ -1,0 +1,24 @@
+{% extends 'fort/base.html' %}
+{% block description %}FORTNITESTATS.RU - на нашем сервисе вы можете узнать свой кд, статистику, новости из мира фортнайт, фортнайт магазин. Так же посмотреть ожидаемые предметы в магазинах fortnite. {% endblock %}
+{% block title %}Главная - FORTNITESTATS.RU{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form action="global_stats" method="GET">
+    {% csrf_token %}
+    <center style="position: relative;display: flex;flex-wrap: nowrap;align-items: center;"><input type="text" style="width: 800px;height: 50px;" class="form-control" name="account" placeholder="Введите ваш ID 754f6b05...." required>
+    <input type="submit" style="box-shadow: 0 0 10px rgb(40, 167, 69);height: 50px;margin-left: -50px;" class="btn btn-success" value="Узнать статистику" ></center>
+    </form>
+    <small style="color: chocolate;">*Узнать ваш ID по Никнейму <a href="find_id">нажать сюда</a></small>
+<h1 style="border-bottom: 2px solid #ff4b37;margin: 0 0 30px 0;max-width: 500px;" class="p-2 text-white">Сегодня в магазине</h1>
+<div class="row" style="max-width: 800px;">
+  {% for info in all_info %}
+  <div style="width: 200px;margin-left: 5px;margin-right: 10px;">
+    <div class="card mb-4 shadow-sm" style="background-color: #fff0;">
+      <a href="weapon_detail?id={{ info.id }}&lang=ru"><img style="width: 200px;" src="{{ info.icon }}" /></a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

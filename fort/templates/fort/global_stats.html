@@ -1,0 +1,177 @@
+{% extends 'fort/base.html' %} 
+{% block description %}FORTNITESTATS.RU - моя статистика в мире фортнайт. {% endblock %}
+{% block title %}Статистика игрока {{ info.name }} - FORTNITESTATS.RU{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #ffffff0a; color: white;">
+  <div class="media" style="padding: 10px;">
+    <img style="width: 100px;border-radius: 100px;border: 3px solid white;" src="https://store.playstation.com/store/api/chihiro/00_09_000/container/RU/ru/999/EP1464-CUSA07669_00-AV00000000000005/1579248578000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" class="mr-3" alt="avatar">
+    <div class="media-body">
+      <h2 class="mt-2"> {{ info.name }} {{ info.account }}</h2>
+      Уровень: <span class="badge badge-secondary">{{ info.level }}</span>
+    </div>
+  </div>
+  </div>
+  <div class="container" style="background-color: #ffffff0a; color: white;margin-top: 10px;display: flex;padding: 20px;text-align: -webkit-right;">
+    <div style="width: 30%;">      
+        <table>
+          <thead>
+            <tr>
+              <th class="solo" colspan="2"><ion-icon name="person-sharp"></ion-icon> СОЛО</th>
+            </tr>
+          </thead>
+         
+          <tbody>
+            <tr>
+              <td><label class="lable1"  for="solo_kd">К/Д</label>
+                <div id="solo_kd">{{ info.solo_kd }}</div>
+                  <div class="line-name"></div></td>
+              <td><label class="lable1"  for="solo_winrate">Винрейт</label>
+                <div id="solo_winrate">{{ info.solo_winrate }}</div>
+                  <div style="    border-radius: 2px;
+              width: 120px;
+              height: 2px;
+              overflow: hidden;
+              background: red;
+              margin: .4rem 0;"></div></td>
+              
+            </tr>
+            <tr>
+              <td><label class="lable1"   for="solo_placetop3">Топ3</label>
+                <div id="solo_placetop3">{{ info.solo_placetop3 }}</div>
+                  <div class="line-name"></div></td>
+              <td><label class="lable1"  for="solo_placetop5">Топ5</label>
+                <div id="solo_placetop5">{{ info.solo_placetop5 }}</div>
+                  <div class="line-name"></div></td>
+            </tr>
+            <tr>
+              <td><label class="lable1"  for="solo_placetop10">Топ10</label>
+                <div id="solo_placetop10">{{ info.solo_placetop10 }}</div>
+                  <div class="line-name"></div></td>
+              <td><label class="lable1"  for="solo_kills">Киллы</label>
+                <div id="solo_kills">{{ info.solo_kills }}</div>
+                  <div class="line-name"></div></td>
+            </tr>
+            <tr>
+              <td><label class="lable1"   for="solo_matchesplayed">Игр</label>
+                <div id="solo_matchesplayed">{{ info.solo_matchesplayed }}</div>
+                  <div class="line-name"></div></td>
+              <td><label class="lable1"  for="solo_score">Счет</label>
+                <div id="solo_score">{{ info.solo_score }}</div>
+                  <div class="line-name"></div> </td>
+            </tr>
+            <tr style="text-align: center;">
+              <td colspan="2"><label class="lable1" " for="solo_minutesplayed">Время в игре</label>
+                <div id="solo_minutesplayed">{{ info.solo_minutesplayed }} мин.</div>
+                  <div class="line-name" style="text-align: center;width: 100%;"></div></td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+<div style="width: 30%;">      
+  <table>
+    <thead>
+      <tr>
+        <th class="duo" colspan="2"><ion-icon name="people-sharp"></ion-icon> НАПАРНИКИ</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+      <tr>
+        <td><label class="lable1"  for="duo_kd">К/Д</label>
+          <div id="duo_kd">{{ info.duo_kd }}</div>
+            <div class="line-duo"></div></td>
+        <td><label class="lable1"  for="duo_winrate">Винрейт</label>
+          <div id="duo_winrate">{{ info.duo_winrate }}</div>
+            <div class="line-duo"></div></td>
+        
+      </tr>
+      <tr>
+        <td><label class="lable1"  for="duo_placetop3">Топ3</label>
+          <div id="duo_placetop3">{{ info.duo_placetop3 }}</div>
+            <div class="line-duo"></div></td>
+        <td><label class="lable1"  for="duo_placetop5">Топ5</label>
+          <div id="duo_placetop5">{{ info.duo_placetop5 }}</div>
+            <div class="line-duo"></div></td>
+       
+      </tr>
+      <tr>
+        <td><label class="lable1"  for="duo_placetop10">Топ10</label>
+          <div id="duo_placetop10">{{ info.duo_placetop10 }}</div>
+            <div class="line-duo"></div></td>
+        <td><label class="lable1"  for="duo_kills">Киллы</label>
+          <div id="duo_kills">{{ info.duo_kills }}</div>
+            <div class="line-duo"></div></td>
+        
+      </tr>
+      <tr>
+        <td><label class="lable1"   for="duo_matchesplayed">Игр</label>
+          <div id="duo_matchesplayed">{{ info.duo_matchesplayed }}</div>
+            <div class="line-duo"></div></td>
+        <td><label class="lable1"  for="duo_score">Счет</label>
+          <div id="duo_score">{{ info.duo_score }}</div>
+            <div class="line-duo"></div> </td>
+        
+      </tr>
+      <tr style="text-align: center;">
+        <td colspan="2"><label class="lable1"  for="duo_minutesplayed">Время в игре</label>
+          <div id="duo_minutesplayed">{{ info.duo_minutesplayed }} мин.</div>
+            <div class="line-duo" style="text-align: center;width: 100%;"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div style="width: 30%;">      
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2" class="squad"><ion-icon name="planet"></ion-icon> SQUAD</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+      <tr>
+        <td><label class="lable1"  for="squad_kd">К/Д</label>
+          <div id="squad_kd">{{ info.squad_kd }}</div>
+            <div class="line-squad"></div></td>
+        <td><label class="lable1"  for="squad_winrate">Винрейт</label>
+          <div id="squad_winrate">{{ info.squad_winrate }}</div>
+            <div class="line-squad"></div></td>
+        
+      </tr>
+      <tr>
+        <td><label class="lable1"   for="squad_placetop3">Топ3</label>
+          <div id="squad_placetop3">{{ info.squad_placetop3 }}</div>
+            <div class="line-squad"></div></td>
+        <td><label class="lable1"  for="squad_placetop5">Топ5</label>
+          <div id="squad_placetop5">{{ info.squad_placetop5 }}</div>
+            <div class="line-squad"></div></td>
+       
+      </tr>
+      <tr>
+        <td><label class="lable1"  for="squad_placetop10">Топ10</label>
+          <div id="squad_placetop10">{{ info.squad_placetop10 }}</div>
+            <div class="line-squad"></div></td>
+        <td><label class="lable1"  for="squad_kills">Киллы</label>
+          <div id="squad_kills">{{ info.squad_kills }}</div>
+            <div class="line-squad"></div></td>
+        
+      </tr>
+      <tr>
+        <td><label class="lable1"  for="squad_matchesplayed">Игр</label>
+          <div id="squad_matchesplayed">{{ info.squad_matchesplayed }}</div>
+            <div class="line-squad"></div></td>
+        <td><label class="lable1"  for="squad_score">Счет</label>
+          <div id="squad_score">{{ info.squad_score }}</div>
+            <div class="line-squad"></div> </td>
+        
+      </tr>
+      <tr style="text-align: center;">
+        <td colspan="2"><label class="lable1" for="squad_minutesplayed">Время в игре</label>
+          <div id="squad_minutesplayed">{{ info.squad_minutesplayed }} мин.</div>
+            <div class="line-squad" style="text-align: center;width: 100%;"></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
