@@ -25,7 +25,7 @@ SECRET_KEY = 'r!f6l(d9uw0n&g6n)2_a(_901!j89l3+^sp50a2-!wks^vc8+o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fortnitestats.ru','194.67.109.42']
 
 
 # Application definition
